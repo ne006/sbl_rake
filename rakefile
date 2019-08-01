@@ -10,11 +10,14 @@ require 'fileutils'
 require 'date'
 
 require 'logger'
+require 'colorize'
+
+require 'git'
 
 CONFIG = JSON.parse(YAML.load_file("sdu_preferences.yml").to_json, object_class: OpenStruct)
 LOG = Logger.new(
 	STDOUT,
-	formatter: proc { |severity, datetime, progname, msg| "#{severity} #{msg}\n" }
+	formatter: proc { |severity, datetime, progname, msg| "#{msg}\n" }
 )
 
 module Helpers
@@ -25,4 +28,8 @@ module Helpers
 	def self.fork(cmd)
 		(Gem.win_platform? ? spawn(cmd) : fork(cmd))
 	end
+
+  def self.legacy_task(desc)
+    "LEGACY: #{desc}"
+  end
 end

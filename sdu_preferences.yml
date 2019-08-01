@@ -5,6 +5,7 @@ env:
   global:
     language: rus
     siebel_build: 23044
+    git_repo: C:/Siebel/bcvm691/efr
   local:
     app:
       name: &dev_client C:/Siebel/8.1.1.14.0
@@ -12,14 +13,14 @@ env:
     web:
       name: *dev_client
       dir: Client/PUBLIC
-    apps:     
-      fins: 
+    apps:
+      fins:
         name: Siebel Financial Services
         config: fins_oui.cfg
-      callcenter: 
+      callcenter:
         name: Call Center
         config: uagent_oui.cfg
-      eai: 
+      eai:
         name: EAI
         config: fins_oui_ws.cfg
       oper_control:
@@ -38,7 +39,7 @@ env:
     language: enu
     config: tools.cfg
     dir: C:/Siebel/8.1.1.14.0/Tools
-    users: 
+    users:
       SIEB326:
         user: SADMIN
         password: SADMIN
