@@ -1,0 +1,50 @@
+project: VTB24 EFR
+current_release: VTB24DPR11
+
+env:
+  global:
+    language: rus
+    siebel_build: 23044
+  local:
+    app:
+      name: &dev_client C:/Siebel/8.1.1.14.0
+      dir: Client
+    web:
+      name: *dev_client
+      dir: Client/PUBLIC
+    apps:     
+      fins: 
+        name: Siebel Financial Services
+        config: fins_oui.cfg
+      callcenter: 
+        name: Call Center
+        config: uagent_oui.cfg
+      eai: 
+        name: EAI
+        config: fins_oui_ws.cfg
+      oper_control:
+        name: VTB24 Operation Control
+        config: oper_control.cfg
+  dev:
+    app:
+      name: bcvm496.tsc.ts
+      dir: /u01/app/Siebel/siebsrvr
+      user: siebel
+      password: siebel
+    web:
+      name: bcvm169.tsc.ts
+      dir: /SWEApp/PUBLIC
+  tools:
+    language: enu
+    config: tools.cfg
+    dir: C:/Siebel/8.1.1.14.0/Tools
+    users: 
+      SIEB326:
+        user: SADMIN
+        password: SADMIN
+      SIEB626:
+        user: SADMIN
+        password: SADMIN
+      SIEB631:
+        user: SADMIN
+        password: SADMIN

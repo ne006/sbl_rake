@@ -1,0 +1,28 @@
+Dir.chdir("C:/projects/rake")
+
+require 'yaml'
+require 'json'
+
+require 'net/sftp'
+require 'pathname'
+
+require 'fileutils'
+require 'date'
+
+require 'logger'
+
+CONFIG = JSON.parse(YAML.load_file("sdu_preferences.yml").to_json, object_class: OpenStruct)
+LOG = Logger.new(
+	STDOUT,
+	formatter: proc { |severity, datetime, progname, msg| "#{severity} #{msg}\n" }
+)
+
+module Helpers
+	def self.username
+		(Gem.win_platform? ? `echo %USERNAME%` : `echo $USER`).chomp.upcase
+	end
+
+	def self.fork(cmd)
+		(Gem.win_platform? ? spawn(cmd) : fork(cmd))
+	end
+end
