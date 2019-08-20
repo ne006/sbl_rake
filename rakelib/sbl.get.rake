@@ -33,8 +33,8 @@ namespace :sbl do
 				end
 			end
 
-			Rake::Task["siebel:script:genbs"].reenable
-			Rake::Task["siebel:script:genbs"].invoke
+			Rake::Task["sbl:script:genbs"].reenable
+			Rake::Task["sbl:script:genbs"].invoke
 		end
 
     desc "Pull Git-versioned files from server"
