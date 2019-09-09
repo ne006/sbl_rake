@@ -26,6 +26,9 @@ env:
       oper_control:
         name: VTB24 Operation Control
         config: oper_control.cfg
+      front_mobile:
+        name: VTB Front Mobile
+        config: front_mobile.cfg
   dev:
     app:
       name: bcvm496.tsc.ts
@@ -47,5 +50,8 @@ env:
         user: SADMIN
         password: SADMIN
       SIEB631:
+        user: SADMIN
+        password: SADMIN
+      SIEB729:
         user: SADMIN
         password: SADMIN

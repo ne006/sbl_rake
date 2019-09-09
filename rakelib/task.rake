@@ -7,7 +7,7 @@ namespace :task do
 		release = CONFIG.current_release
 		task_id = args.task_id
 
-		work_dir = Pathname.new task.application.find_rakefile_location.last
+		work_dir = Pathname.new "C:/Users/#{Helpers.username}"
 
 		#Replace asterisk with current release
 		task_id.sub!(/\*/, "#{release}-")
@@ -58,7 +58,7 @@ namespace :task do
 			end.first
 
 			report = Report.new YAML.load_file(Pathname.new(cur_dir).join(task_file))
-			
+
 			puts report.format :table
 	end
 end

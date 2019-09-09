@@ -3,6 +3,7 @@ GEM
   specs:
     colorize (0.8.1)
     ffi (1.11.1-x64-mingw32)
+    git (1.5.0)
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (5.0.2)
@@ -14,8 +15,9 @@ PLATFORMS
 
 DEPENDENCIES
   colorize (~> 0.8.1)
+  git (~> 1.5.0)
   net-sftp (~> 2.1.2)
   win32-clipboard (~> 0.6.4)
 
 BUNDLED WITH
-   1.16.6
+   1.17.2
