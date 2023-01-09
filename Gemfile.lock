@@ -1,21 +1,29 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     colorize (0.8.1)
+    ffi (1.11.1)
     ffi (1.11.1-x64-mingw32)
-    git (1.5.0)
+    git (1.13.0)
+      addressable (~> 2.8)
+      rchardet (~> 1.8)
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (5.0.2)
+    public_suffix (5.0.1)
+    rchardet (1.8.0)
     win32-clipboard (0.6.4)
       ffi
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
   colorize (~> 0.8.1)
-  git (~> 1.5.0)
+  git (~> 1.13.0)
   net-sftp (~> 2.1.2)
   win32-clipboard (~> 0.6.4)
 
